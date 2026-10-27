@@ -1,0 +1,110 @@
+/* Codex Nuit : grimoire sous un ciel cosmique (dark fantasy) traversé de néons (cyberpunk) */
+:root {
+  --night: #06051a;      /* fond */
+  --panel: rgb(8 7 34 / 0.82); /* surfaces translucides */
+  --seam: #34338a;       /* bordures */
+  --text: #ecebff;
+  --bright: #f4f1ff;     /* titres de section */
+  --ash: #b9b6e6;        /* texte secondaire */
+  --mist: #c9c6ec;
+  --parchment: #ffeccc;  /* grand titre */
+  --gilt: #ffd36a;       /* or : actions, surtitres */
+  --neon: #ff2fa8;       /* néon rose */
+  --link: #9fb0ff;
+  --hover: #ff7ad0;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--night);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--hover); }
+:focus-visible { outline: 2px solid var(--gilt); outline-offset: 3px; }
+
+.site { position: relative; min-height: 100vh; overflow: hidden; background: var(--night); }
+
+/* Jardin 3D du chevalier, fixé derrière le contenu */
+.garden {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a1696 0%, #2a46ee 35%, #bdaeff 55%, #1d5e27 58%, #0b2a12 100%);
+}
+.garden-canvas { position: absolute; inset: 0; }
+.garden-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(6 5 26 / 0.8) 0%, rgb(6 5 26 / 0.4) 30%, rgb(6 5 26 / 0) 55%, rgb(6 5 26 / 0) 85%, rgb(6 5 26 / 0.45) 100%);
+}
+
+/* En-tête */
+.eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--gilt);
+  text-shadow: 2px 2px 0 var(--night);
+}
+.title {
+  font-family: var(--font-display), serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 16vw, 6.5rem);
+  line-height: 0.85;
+  margin: 0;
+  color: var(--parchment);
+  text-shadow: 0 0 18px #6d7bff, 0 0 50px #3a3cff, 0 0 90px var(--neon);
+}
+
+/* Liste de liens */
+.links {
+  position: relative;
+  z-index: 2;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 7rem 1.25rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.link-list { display: flex; flex-direction: column; gap: 1rem; width: 100%; margin-top: 4rem; }
+.link {
+  --accent: var(--gilt);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--seam);
+  backdrop-filter: blur(4px);
+  color: var(--text);
+  text-align: left;
+}
+.link--neon { --accent: var(--neon); }
+.link:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--text); }
+.link-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.15rem; }
+.link-name {
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--bright);
+}
+.link-url { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); }
+.link-desc { font-size: 0.9rem; color: var(--mist); margin-top: 0.35rem; }
+.link-arrow { font-size: 1.4rem; color: var(--accent); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .link { transition: border-color 0.2s, transform 0.2s; }
+}
