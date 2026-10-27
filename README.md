@@ -1,21 +1,14 @@
 # Liens
 
-Carnet de liens de Gabin Clavier (portfolio, Codex…), sous le ciel « Codex Nuit » :
-un jardin 3D animé (Three.js) derrière une liste de liens.
-Next.js (App Router), même structure et même style que [Codex](https://codex.gabin-clavier.fr).
+Carnet de liens de Gabin Clavier (portfolio, Codex…), sous le jardin 3D du chevalier, dans le style « Codex Nuit ».
+Page statique : `index.html`, `styles.css` et `knight-garden.js` (scène Three.js), sans build ni dépendance à installer.
 
-- `lib/links.ts` : les liens affichés ; en ajouter un ici suffit
-- `lib/knight-garden.js` : la scène 3D du jardin (chargée uniquement côté navigateur)
-- `app/globals.css` : le thème Codex Nuit
-- `app/manifest.ts` + `public/icons/` : application installable (PWA)
-
-## Mise en route
-
-`npm install` puis `npm run dev`, et ouvre http://localhost:3000.
+Pour la voir en local, sers le dossier avec n'importe quel serveur statique (par exemple Live Server).
+Un serveur est nécessaire, car le module JavaScript ne se charge pas en ouvrant le fichier directement.
 
 ## Mise en ligne sur links.gabin-clavier.fr
 
-Comme Codex : importer le repo sur Vercel (aucune variable d'environnement nécessaire),
-puis ajouter le domaine `links.gabin-clavier.fr` dans le projet Vercel.
-Vercel indique l'enregistrement CNAME à créer dans la zone DNS `gabin-clavier.fr` sur Cloudflare,
-en mode « DNS only » (nuage gris).
+Même hébergement que Codex : le repo est importé sur Vercel (preset « Other », aucune commande de build),
+puis le domaine `links.gabin-clavier.fr` est ajouté au projet Vercel.
+Le CNAME indiqué par Vercel est créé dans la zone DNS `gabin-clavier.fr` sur Cloudflare, en « DNS only » (nuage gris).
+Chaque push sur `main` redéploie le site.

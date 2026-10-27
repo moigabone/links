@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabin Clavier · Liens</title>
+<meta name="description" content="Carnet de liens de Gabin Clavier : portfolio et Codex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=Grenze+Gotisch:wght@700;900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+  <div class="garden">
+    <div class="garden-canvas" id="garden" aria-hidden="true"></div>
+    <div class="garden-veil" aria-hidden="true"></div>
+  </div>
+
+  <main class="links">
+    <p class="eyebrow">Carnet de liens</p>
+    <h1 class="title">Gabin Clavier</h1>
+    <nav class="link-list">
+      <a class="link" href="https://gabin-clavier.fr">
+        <span class="link-body">
+          <span class="link-name">Portfolio</span>
+          <span class="link-url">gabin-clavier.fr</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="link link--neon" href="https://codex.gabin-clavier.fr">
+        <span class="link-body">
+          <span class="link-name">Codex</span>
+          <span class="link-url">codex.gabin-clavier.fr</span>
+          <span class="link-desc">Ce que je regarde, lis et joue, et où j’en suis.</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+  </main>
+</div>
+
+<script type="module">
+  import { mount } from './knight-garden.js';
+  try { mount(document.getElementById('garden')); }
+  catch (err) { console.error(err); } // sans WebGL, le dégradé de fond reste visible
+</script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 /* Codex Nuit : grimoire sous un ciel cosmique (dark fantasy) traversé de néons (cyberpunk) */
 :root {
+  --font-display: "Grenze Gotisch";
+  --font-body: "Chakra Petch";
   --night: #06051a;      /* fond */
   --panel: rgb(8 7 34 / 0.82); /* surfaces translucides */
   --seam: #34338a;       /* bordures */
