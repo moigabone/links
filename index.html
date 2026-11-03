@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gabin Clavier · Liens</title>
-<meta name="description" content="Carnet de liens de Gabin Clavier : portfolio, Codex et Veille.">
+<title>Gabin Clavier · Carte</title>
+<meta name="description" content="Mes sites (portfolio, Codex, Veille) et tout ce qui les fait tourner, sur une carte interactive.">
 <meta name="theme-color" content="#06051a">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,37 +20,38 @@
     <div class="garden-veil" aria-hidden="true"></div>
   </div>
 
-  <main class="links">
-    <p class="eyebrow">Carnet de liens</p>
-    <h1 class="title">Gabin Clavier</h1>
-    <nav class="link-list">
-      <a class="link" href="https://gabin-clavier.fr">
-        <span class="link-body">
-          <span class="link-name">Portfolio</span>
-          <span class="link-url">gabin-clavier.fr</span>
-        </span>
-        <span class="link-arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="link link--neon" href="https://codex.gabin-clavier.fr">
-        <span class="link-body">
-          <span class="link-name">Codex</span>
-          <span class="link-url">codex.gabin-clavier.fr</span>
-          <span class="link-desc">Ce que je regarde, lis et joue, et où j’en suis.</span>
-        </span>
-        <span class="link-arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="link link--sky" href="https://veille.gabin-clavier.fr">
-        <span class="link-body">
-          <span class="link-name">Veille</span>
-          <span class="link-url">veille.gabin-clavier.fr</span>
-          <span class="link-desc">Le récap de l’actu du matin, par thème. Sur invitation.</span>
-        </span>
-        <span class="link-arrow" aria-hidden="true">→</span>
-      </a>
-    </nav>
+  <main class="page">
+    <header class="masthead">
+      <p class="eyebrow">Carte du royaume</p>
+      <h1 class="title">Gabin Clavier</h1>
+      <p class="lede">Mes sites et tout ce qui les fait tourner. Clique sur un site pour l’ouvrir, ou sur une brique pour savoir ce qu’elle fait.</p>
+    </header>
+
+    <div class="toolbar">
+      <div class="chips" id="filters" role="group" aria-label="Allumer un projet"></div>
+      <div class="chips" id="flows" role="group" aria-label="Voir un parcours"></div>
+    </div>
+
+    <div class="map">
+      <div class="board" id="board">
+        <svg class="wires" id="wires" aria-hidden="true"></svg>
+      </div>
+      <aside class="details" id="details" aria-live="polite">
+        <p class="details-eyebrow">Mode d’emploi</p>
+        <h2 class="details-title">Bienvenue</h2>
+        <p>Les <strong>sites</strong> s’ouvrent d’un clic. Les autres briques affichent leur fiche : leur rôle, leur coût et où elles se trouvent dans le code.</p>
+        <p>Lance un <strong>parcours</strong> pour voir un point lumineux suivre le chemin des données, par exemple la veille préparée chaque matin à 6 h 30.</p>
+        <p class="details-total">Coût total : environ <strong>0,40 $ par mois</strong> d’IA, plus le domaine. Tout le reste tourne sur des offres gratuites.</p>
+      </aside>
+    </div>
+
+    <footer class="foot">
+      <a href="https://github.com/moigabone">Le code sur GitHub ↗</a>
+    </footer>
   </main>
 </div>
 
+<script type="module" src="map.js"></script>
 <script type="module">
   import { mount } from './knight-garden.js';
   try { mount(document.getElementById('garden')); }

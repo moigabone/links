@@ -1,7 +1,12 @@
 # Liens
 
-Carnet de liens de Gabin Clavier (portfolio, Codex…), sous le jardin 3D du chevalier, dans le style « Codex Nuit ».
-Page statique : `index.html`, `styles.css` et `knight-garden.js` (scène Three.js), sans build ni dépendance à installer.
+Carte interactive de mes sites (portfolio, Codex, Veille) et de tout ce qui les fait tourner, sous le jardin 3D du chevalier, dans le style « Codex Nuit ».
+Un clic sur un site l’ouvre ; un clic sur une brique (Vercel, Supabase, Claude…) affiche son rôle, son coût et où elle se trouve dans le code ;
+les filtres allument un projet et les parcours animent le chemin des données (la veille de 6 h 30, une connexion, un git push).
+
+Page statique, sans build : `index.html`, `styles.css`, `map.js` (la carte), `map-data.js` (son contenu : briques, liens, parcours)
+et `knight-garden.js` (scène Three.js).
+Pour ajouter un site ou une brique, il suffit de modifier `map-data.js`.
 
 Pour la voir en local, sers le dossier avec n'importe quel serveur statique (par exemple Live Server).
 Un serveur est nécessaire, car le module JavaScript ne se charge pas en ouvrant le fichier directement.
