@@ -18,8 +18,8 @@ export const TIERS = [
 const ALL = ['portfolio', 'codex', 'veille'];
 
 export const NODES = [
-  { id: 'visiteurs', tier: 'acces', name: 'Toi et tes amis', sub: 'Navigateur ou appli installée', projects: ALL,
-    role: 'Ouvrent les sites depuis un navigateur, ou depuis les applis installées sur le téléphone (Codex, Veille).' },
+  { id: 'visiteurs', tier: 'acces', name: 'Les visiteurs', sub: 'Navigateur ou appli installée', projects: ALL,
+    role: 'Ouvrent mes sites depuis un navigateur, ou depuis les applis installées sur leur téléphone (Codex, Veille).' },
   { id: 'cloudflare', tier: 'acces', name: 'Cloudflare', sub: 'DNS de gabin-clavier.fr', projects: ALL,
     role: 'Annuaire du domaine : chaque sous-domaine pointe vers son hébergeur, et les enregistrements de Resend prouvent que les e-mails viennent bien de moi.',
     cost: '0 €, offre gratuite', url: 'https://www.cloudflare.com' },
@@ -104,11 +104,11 @@ export const FLOWS = [
   },
   {
     id: 'connexion', label: 'Une connexion', project: 'veille', steps: [
-      { edge: ['visiteurs', 'cloudflare'], text: 'Tu tapes veille.gabin-clavier.fr : Cloudflare répond avec l’adresse de Vercel.' },
+      { edge: ['visiteurs', 'cloudflare'], text: 'Un invité tape veille.gabin-clavier.fr : Cloudflare répond avec l’adresse de Vercel.' },
       { edge: ['vercel', 'veille'], text: 'Vercel sert la page de la Veille.' },
-      { edge: ['veille', 'supabase'], text: 'Tu entres ton e-mail (et le code d’invitation la première fois) : Supabase vérifie la liste des invités.' },
-      { edge: ['supabase', 'resend'], text: 'Resend t’envoie un code depuis noreply@gabin-clavier.fr.' },
-      { edge: ['veille', 'supabase'], text: 'Code bon : les règles d’accès laissent lire l’édition et enregistrent tes Lu / Plus tard.' },
+      { edge: ['veille', 'supabase'], text: 'Il entre son e-mail (et le code d’invitation la première fois) : Supabase vérifie la liste des invités.' },
+      { edge: ['supabase', 'resend'], text: 'Resend lui envoie un code depuis noreply@gabin-clavier.fr.' },
+      { edge: ['veille', 'supabase'], text: 'Code bon : les règles d’accès laissent lire l’édition et enregistrent ses Lu / Plus tard.' },
     ],
   },
   {
